@@ -1,2 +1,2 @@
 # wvlfgradecalculator
-grading system based on sti
+simple grade calculator stiers
