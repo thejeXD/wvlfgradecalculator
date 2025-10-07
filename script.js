@@ -1,7 +1,6 @@
 let subjectCount = 0;
 
 // Meme images configuration
-// Put your meme images in a 'memes' folder and update these paths
 const passedMemes = [
     'memes/passed1.jpg',
     'memes/passed2.jpg',
@@ -63,10 +62,8 @@ function showMeme(isPassed) {
     motivationalText.textContent = '';
     
     if (isPassed !== null) {
-        // Show motivational message
         motivationalText.textContent = getRandomMessage(isPassed ? passedMessages : failedMessages);
         
-        // Show meme image
         const memeImg = document.createElement('img');
         memeImg.src = getRandomMeme(isPassed ? passedMemes : failedMemes);
         memeImg.alt = isPassed ? 'Passed Meme' : 'Failed Meme';
@@ -80,11 +77,10 @@ function showMeme(isPassed) {
 function validateGrade(input) {
     let value = parseFloat(input.value);
     
-    // Check if value is greater than 100
     if (value > 100) {
         input.value = 100;
     }
-    // Check if value is less than 0
+
     else if (value < 0) {
         input.value = 0;
     }
@@ -221,7 +217,7 @@ function saveGrades() {
     URL.revokeObjectURL(url);
 }
 
-// Add initial subject on page load
+
 window.onload = function() {
     addSubject();
 };
